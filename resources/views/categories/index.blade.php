@@ -1,4 +1,4 @@
-<x-main>
+<x-app-layout>
     <h2>Categories</h2>
     <a href="./categories/create">Create new</a>
     <p>
@@ -7,7 +7,7 @@
     <ul>
         @foreach($categories as $category)
             <li>
-                <div style="padding: 20px; background-color: {{ $category->is_active ? 'black' : '#444' }}">
+                <div style="padding: 20px; background-color: {{ $category->is_active ? 'black' : '#444' }}; color: #bbb">
                     <a href="./categories/{{ $category->id }}">
                         Name: <span>{{ $category->name }}</span>
                         - Type: <span>{{ $category->type }}</span>
@@ -24,4 +24,4 @@
             </li>
         @endforeach
     </ul>
-</x-main>
+</x-app-layout>

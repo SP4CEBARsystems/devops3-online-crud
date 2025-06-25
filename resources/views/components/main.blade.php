@@ -52,8 +52,19 @@
             </div>
         </nav>
 
-        {{-- Main content --}}
-        {{ $slot }}
+        {{-- resources/views/categories/index.blade.php --}}
+        @extends('layouts.app')
+
+        @section('content')
+            <div class="p-6">
+                <h1 class="text-2xl font-bold mb-4">Categories</h1>
+
+                {{-- Main content --}}
+                {{ $slot }}
+
+            </div>
+        @endsection
+
 
         {{-- Footer --}}
         <footer class="footer">

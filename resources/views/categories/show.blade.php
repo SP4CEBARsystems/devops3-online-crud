@@ -1,7 +1,7 @@
-<x-main>
+<x-app-layout>
     <h2>Category</h2>
     <a href="./">Return to categories</a>
-    <div style="padding: 20px; background-color: {{ $category->is_active ? 'black' : '#444' }}">
+    <div style="padding: 20px; background-color: {{ $category->is_active ? 'black' : '#444' }}; color: #bbb">
         Name: <span>{{ $category->name }}</span>
         - Type: <span>{{ $category->type }}</span>
         - Is active: <span>{{ $category->is_active }}</span>
@@ -13,4 +13,4 @@
             </button>
         </a>
     </div>
-</x-main>
+</x-app-layout>
