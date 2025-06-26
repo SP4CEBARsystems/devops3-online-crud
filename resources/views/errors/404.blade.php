@@ -1,23 +1,23 @@
 <x-app-layout>
     <div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-gray-50">
         <h1
-            style="font-size: 6rem; text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.8);"
-            class="font-extrabold text-red-600 leading-none mb-6 select-none"
+            style="font-size: 6rem; text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.8); margin-bottom: -1rem;"
+            class="font-extrabold text-red-600 leading-none select-none"
         >
             404
         </h1>
-        <h2 class="text-4xl font-semibold text-gray-800 mb-3">
-            Pagina niet gevonden
+        <h2 class="text-4xl font-semibold text-gray-800">
+            Page not found
         </h2>
-        <p class="text-gray-600 mb-8 max-w-md">
+        <p class="text-gray-600"  style="margin-bottom: 2rem; margin-top: 2rem">
             Sorry, de pagina die je zoekt bestaat niet of is verwijderd.
         </p>
-        <a href="{{ url('/') }}"
+        <a href="{{ url()->previous() }}"
             style="display: inline-block; padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 1rem; background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;"
         >
             Go back
         </a>
-        <p class="text-gray-600" style="margin-bottom: 2rem">
+        <p class="text-gray-600" style="margin-bottom: 2rem; margin-top: 5rem">
             Other pages you might like:
         </p>
         <div class="flex flex-row items-center justify-center px-4 text-center bg-gray-50 py-2" style="gap: 0.5rem">
