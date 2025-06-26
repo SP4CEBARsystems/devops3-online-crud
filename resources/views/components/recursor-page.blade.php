@@ -19,7 +19,7 @@
             @foreach ($posts as $item)
                 <a href="{{ url($loop->index == 2 ? '/simulate-500' : '/post' . $loop->index) }}"
                     style="display: inline-block; padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 1rem;
-                    background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;
+                    background-color: #666; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;
                     width: 15rem; height: 7rem"
                 >
                     {{ $item }}
