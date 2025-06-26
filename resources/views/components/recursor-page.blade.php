@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-gray-50">
-        <div style="display: grid; grid-template-columns: 1fr 3rem; margin-bottom: 7rem;">
+        <div style="display: grid; grid-template-columns: 30rem 3rem; margin-bottom: 7rem;">
             <h2 class="text-4xl font-semibold text-gray-800">
                 {{ $title }}
             </h2>
@@ -12,7 +12,7 @@
         >
             {{ $button }}
         </a>
-        <p class="text-gray-600" style="margin-bottom: 1rem; margin-top: 10rem">
+        <p class="text-gray-600" style="margin-bottom: 1rem; margin-top: 3.5rem">
             Other pages you might like:
         </p>
         <div class="flex flex-row items-center justify-center px-4 text-center bg-gray-50 py-2" style="gap: 0.5rem">
