@@ -4,7 +4,7 @@
             <h2 class="text-4xl font-semibold text-gray-800">
                 {{ $title }}
             </h2>
-            <h1 class="font-extrabold text-red-600 leading-none select-none">404</h1>
+            <h1 class="font-extrabold text-red-600 leading-none select-none">$code</h1>
         </div>
         <a href="{{ $buttonUrl }}"
             style="display: inline-block; width: 15rem; height: 5rem; padding-top: 1.5rem; padding-bottom: auto;
