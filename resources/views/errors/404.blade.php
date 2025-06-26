@@ -1,23 +1,18 @@
 <x-app-layout>
     <div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-gray-50">
-        <h1
-            style="font-size: 6rem; text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.8); margin-bottom: -1rem;"
-            class="font-extrabold text-red-600 leading-none select-none"
-        >
-            404
-        </h1>
-        <h2 class="text-4xl font-semibold text-gray-800">
-            Page not found
-        </h2>
-        <p class="text-gray-600"  style="margin-bottom: 2rem; margin-top: 2rem">
-            Sorry, de pagina die je zoekt bestaat niet of is verwijderd.
-        </p>
+        <div style="display: grid; grid-template-columns: 1fr 3rem; margin-bottom: 7rem;">
+            <h2 class="text-4xl font-semibold text-gray-800">
+                Oh no! We couldn't find that page
+            </h2>
+            <h1 class="font-extrabold text-red-600 leading-none select-none">404</h1>
+        </div>
         <a href="{{ url()->previous() }}"
-            style="display: inline-block; padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 1rem; background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;"
+            style="display: inline-block; width: 15rem; height: 5rem; padding-top: 1.5rem; padding-bottom: auto;
+            background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;"
         >
             Go back
         </a>
-        <p class="text-gray-600" style="margin-bottom: 2rem; margin-top: 5rem">
+        <p class="text-gray-600" style="margin-bottom: 1rem; margin-top: 10rem">
             Other pages you might like:
         </p>
         <div class="flex flex-row items-center justify-center px-4 text-center bg-gray-50 py-2" style="gap: 0.5rem">
@@ -25,9 +20,11 @@
                 $posts = ['post of last week', 'post I deleted', 'post on the obscure server we don’t talk about'];
             @endphp
             @foreach ($posts as $item)
-                <a href="{{ url('/') }}"
-                    style="display: inline-block; padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 1rem; background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;"
-                    >
+                <a href="{{ url($loop->index == 2 ? '/simulate-500' : '/post' . $loop->index) }}"
+                    style="display: inline-block; padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 1rem;
+                    background-color: #2563EB; color: #FFFFFF; font-weight: 600; border-radius: 0.5rem; transition: background-color 0.15s ease-in-out;
+                    width: 15rem; height: 7rem"
+                >
                     {{{ $item }}}
                 </a>
             @endforeach
