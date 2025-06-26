@@ -25,4 +25,8 @@ Route::middleware(['auth'])->group(function () {
 // Route::redirect('/', '/categories');
 // Route::resource('/categories', CategoryController::class);
 
+Route::get('/simulate-500', function () {
+    abort(500); // or throw new \Exception('Simulated Server Error');
+});
+
 require __DIR__.'/auth.php';
