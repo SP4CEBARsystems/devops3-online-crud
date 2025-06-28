@@ -7,32 +7,36 @@
             <p>{{ $message }}</p>
         </div>
     @endforeach
-    <form action="{{ route('categories.store') }}" method="POST">
+    <form action="{{ route('categories.store') }}" method="POST" style="margin-inline: auto; width: 50rem;">
         @csrf
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="is_active">Is active:</label><br>
-        <input type="hidden" name="is_active" value="false">
-        <input type="checkbox" id="is_active" name="is_active" value="true"><br>
+        <label for="name">Tell us what you want to talk about</label><br>
+        <textarea id="name" name="name" placeholder="Your message goes here" style="
+            width: 400px; height: 100px;
+            border-radius: 10px; padding: 10px; background-color: #b6b6b6;color: white;
+        "></textarea><br>
+        <label for="is_active" style="display: none">Is active:</label><br>
+        <input type="hidden" name="is_active" value="false" style="display: none">
+        <input type="checkbox" id="is_active" name="is_active" value="true" style="display: none"><br>
         <fieldset>
-            <legend>Select a type:</legend>
-
+            <legend>Select a category:</legend>
             <div>
-                <input type="radio" id="diepvries" name="type" value="diepvries" checked />
-                <label for="diepvries">Diepvries</label>
+                <input type="radio" id="discussion" name="type" value="discussion" checked />
+                <label for="discussion">Discussion</label>
             </div>
-
             <div>
-                <input type="radio" id="kort_houdbaar" name="type" value="kort_houdbaar" />
-                <label for="kort_houdbaar">Kort houdbaar</label>
+                <input type="radio" id="idea" name="type" value="idea" />
+                <label for="idea">Idea</label>
             </div>
-
             <div>
-                <input type="radio" id="lang_houdbaar" name="type" value="lang_houdbaar" />
-                <label for="lang_houdbaar">lang houdbaar</label>
+                <input type="radio" id="question" name="type" value="question" />
+                <label for="question">Question</label>
+            </div>
+            <div>
+                <input type="radio" id="misc" name="type" value="misc" />
+                <label for="misc">Misc</label>
             </div>
         </fieldset>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create New Post" style="border-radius: 10px; padding: 10px; background-color: blue;color: white;">
     </form>
 </x-app-layout>
