@@ -28,6 +28,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        if (empty($validated['name'])) {
+            return back()->withErrors(['name' => 'Please provide a message'])->withInput();
+        }
         $validated = $request->validate([
             'name' => 'required|string',
             'type' => 'required|string',
@@ -35,9 +38,6 @@ class CategoryController extends Controller
         ]);
         $validated['is_active'] = $validated['is_active']=='true';
 
-        if (empty($validated['name'])) {
-            return back()->withErrors(['name' => 'The message field cannot be empty.'])->withInput();
-        }
 
         $category = Category::create($validated);
 
