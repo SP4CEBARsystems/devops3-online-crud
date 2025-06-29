@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $validated['is_active'] = $validated['is_active']=='true';
 
         if (empty($validated['name'])) {
-            return back()->withErrors(['name' => 'The name field cannot be empty.'])->withInput();
+            return back()->withErrors(['name' => 'The message field cannot be empty.'])->withInput();
         }
 
         $category = Category::create($validated);
