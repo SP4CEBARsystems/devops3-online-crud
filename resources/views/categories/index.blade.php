@@ -11,12 +11,12 @@
                     <a href="./categories/{{ $category->id }}">
                         Name: <span>{{ $category->name }}</span>
                         - Type: <span>{{ $category->type }}</span>
-                        - Is active: <span>{{ $category->is_active }}</span>
+                        {{-- - Is active: <span>{{ $category->is_active }}</span>
                         - Created at: <span>{{ $category->created_at }}</span>
-                        - Updated at: <span>{{ $category->updated_at }}</span>
+                        - Updated at: <span>{{ $category->updated_at }}</span>--}}
                     </a>
                     <a href="./categories/{{ $category->id }}/edit">
-                        <button>
+                        <button style="border-radius: 10px; padding: 10px; background-color: blue;color: white;">
                             Edit
                         </button>
                     </a>

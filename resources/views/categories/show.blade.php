@@ -4,11 +4,11 @@
     <div style="padding: 20px; background-color: {{ $category->is_active ? 'black' : '#444' }}; color: #bbb">
         Name: <span>{{ $category->name }}</span>
         - Type: <span>{{ $category->type }}</span>
-        - Is active: <span>{{ $category->is_active }}</span>
+        {{-- - Is active: <span>{{ $category->is_active }}</span>
         - Created at: <span>{{ $category->created_at }}</span>
-        - Updated at: <span>{{ $category->updated_at }}</span>
+        - Updated at: <span>{{ $category->updated_at }}</span> --}}
         <a href="./{{ $category->id }}/edit">
-            <button>
+            <button style="border-radius: 10px; padding: 10px; background-color: blue;color: white;">
                 Edit
             </button>
         </a>
