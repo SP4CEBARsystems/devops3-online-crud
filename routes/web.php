@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('/categories', CategoryController::class);
+    Route::resource('/posts', CategoryController::class);
 });
 
 // Route::redirect('/', '/categories');

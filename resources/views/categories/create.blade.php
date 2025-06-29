@@ -1,6 +1,6 @@
 <x-app-layout>
     <h2>Create</h2>
-    <a href="./">Return to categories</a>
+    <a href="./">Return to posts</a>
     {{--
     @foreach ($errors->all() as $message)
         <div>
@@ -9,7 +9,7 @@
         </div>
     @endforeach
      --}}
-    <form action="{{ route('categories.store') }}" method="POST" style="margin-inline: auto; width: 50rem;">
+    <form action="{{ route('posts.store') }}" method="POST" style="margin-inline: auto; width: 50rem;">
         @csrf
         <label for="name">Tell us what you want to talk about</label><br>
         <textarea id="name" name="name" placeholder="Your message goes here" style="

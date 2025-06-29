@@ -41,29 +41,29 @@ class CategoryController extends Controller
 
         $category = Category::create($validated);
 
-        return redirect("/categories/{$category->id}");
+        return redirect("/posts/{$category->id}");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Category $post)
     {
-        return view('categories.show', compact('category'));
+        return view('categories.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(Category $post)
     {
-        return view('categories.edit', compact('category'));
+        return view('categories.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $post)
     {
         $validated = $request->validate([
             'name' => 'required|string',
@@ -72,18 +72,18 @@ class CategoryController extends Controller
         ]);
         $validated['is_active'] = $validated['is_active']=='true';
 
-        $category->update($validated);
+        $post->update($validated);
 
-        return redirect('/categories/'.$category->id)
-            ->with('success', "Task $category->id is successfully created");
+        return redirect('/posts/'.$post->id)
+            ->with('success', "Task $post->id is successfully created");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Category $post)
     {
-        $category->delete();
-        return redirect('/categories');
+        $post->delete();
+        return redirect('/posts');
     }
 }
