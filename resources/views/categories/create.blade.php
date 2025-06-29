@@ -16,6 +16,7 @@
             width: 400px; height: 100px;
             border-radius: 10px; padding: 10px; background-color: #b6b6b6;color: white;
             border 3px; border-color: {{ $errors->has('name') ? 'red' : 'gray' }};
+            color: black;
         "></textarea><br>
         @if ($errors->has('name'))
             <div style="color: red; margin-bottom: 10px; border-radius: 10px; padding: 5px 10px; background-color: #ff000020; width: 25rem;">
