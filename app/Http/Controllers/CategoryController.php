@@ -35,9 +35,13 @@ class CategoryController extends Controller
         ]);
         $validated['is_active'] = $validated['is_active']=='true';
 
+        if (empty($validated['name'])) {
+            return back()->withErrors(['name' => 'The name field cannot be empty.'])->withInput();
+        }
+
         $category = Category::create($validated);
 
-        return redirect('/categories/'.$category->id);
+        return redirect("/categories/{$category->id}");
     }
 
     /**
